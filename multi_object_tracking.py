@@ -16,16 +16,16 @@ args = vars(ap.parse_args())
 # initialize a dictionary that maps strings to their corresponding
 # OpenCV object tracker implementations
 OPENCV_OBJECT_TRACKERS = {
-	"csrt": cv2.TrackerCSRT_create,
+	#"csrt": cv2.TrackerCSRT_create,
 	"kcf": cv2.TrackerKCF_create,
-	"boosting": cv2.TrackerBoosting_create,
-	"mil": cv2.TrackerMIL_create,
-	"tld": cv2.TrackerTLD_create,
-	"medianflow": cv2.TrackerMedianFlow_create,
+	#"boosting": cv2.TrackerBoosting_create,
+	#"mil": cv2.TrackerMIL_create,
+	#"tld": cv2.TrackerTLD_create,
+	#"medianflow": cv2.TrackerMedianFlow_create,
 	"mosse": cv2.TrackerMOSSE_create
 }
 
-# initialize OpenCV's special multi-object tracker
+# initialize OpenCV's special multi-object trackerpip install opencv-contrib-python==4.4.0.44
 trackers = cv2.MultiTracker_create()
 
 # if a video path was not supplied, grab the reference to the web cam
@@ -47,7 +47,7 @@ while True:
 	if frame is None:
 		break
 	# resize the frame (so we can process it faster)
-	frame = imutils.resize(frame, width=600)
+	frame = imutils.resize(frame, width=1000)
 
     # grab the updated bounding box coordinates (if any) for each
 	# object that is being tracked
